@@ -3,7 +3,6 @@ import logoIndividuos from "public/images/card-individuos-grupos.webp";
 import logoOrg from "public/images/card-empresas.webp";
 import Image from "next/image";
 import ServicesCard from "@/components/card/ServicesCard";
-
 import ConsultationForm from "../../components/forms/ConsultationForm";
 import { useState } from "react";
 import Link from "next/link";
@@ -32,7 +31,7 @@ export const OurServices = ({ services }) => {
       {openForm ? <ConsultationForm handleCloseForm={handleCloseForm} /> : null}
 
       <div className="w-full">
-        <div className=" bg-[url('../public/images/portada-servicios.webp')]  h-[65vh] flex flex-col justify-center items-center bg-center bg-cover">
+        <div className=" bg-[url(../public/images/portada-servicios.webp)]  h-[65vh] flex flex-col justify-center items-center bg-center bg-cover">
           <p className=" text-white font-semibold pb-2 px-4 text-md text-center mb-0 drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))] sm:text-3xl">
             Nuestros servicios están orientados a todas
           </p>
@@ -105,7 +104,7 @@ export const OurServices = ({ services }) => {
           />
         </div>
 
-        <div className="bg-[url('../public/images/revision-cv-gratis.webp')] h-[65vh] flex flex-col justify-center items-center bg-center bg-cover">
+        <div className="bg-[url(../public/images/revision-cv-gratis.webp)] h-[65vh] flex flex-col justify-center items-center bg-center bg-cover">
           <h2 className="text-white font-semibold pb-2 px-4 text-3xl text-center mb-0 drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))]">
             ¡RECURSOS GRATIS!
           </h2>
