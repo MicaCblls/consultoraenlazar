@@ -1,42 +1,94 @@
 import { urlFor } from "@/lib/sanity";
 import Image from "next/image";
-import Link from "next/link";
+import styles from "./ServicesCard.module.css";
 
-const ServicesCard = ({ services }) => {
-    const { title, description, mainImage, price, slug } = services;
-    const shadow = {
-        boxShadow: "4px 4px 10px rgba(0, 0, 0, 0.25)"
-    }
-    return (
-        <div className="flex flex-wrap justify-center gap-10 items-center ">
-            {services &&
-                services.map((service) => (
-                    <div className="flex items-center max-w-[500px] h-[280px] shadow-2xl rounded-3xl"
-                        style={shadow} key={service._id}>
-                        <div className="flex items-center h-full rounded-tl-3xl rounded-bl-3xl bg-[#BAC9CE] w-[30%] px-6">
-                            <Image
-                                alt={service.title + " image"}
-                                src={urlFor(service.mainImage).url()}
-                                width={100} height={100} />
-                        </div>
-                        <div className="flex flex-col w-[70%] h-full">
-                            <div className=" p-5 h-44">
-                                <h2 className="py-5 font-semibold">{service.title}</h2>
-                                <p className="text-sm">{service.description}</p>
+const ServicesCard = ({
+  servicesForIndividuals,
+  servicesForOrganizations,
+  handleOpenForm,
+}) => {
+  const shadow = {
+    boxShadow: "4px 4px 10px rgba(0, 0, 0, 0.25)",
+  };
+  return (
+    <>
+      <h2
+        className="pt-32 pb-14 px-10 font-semibold md:text-xl text-ellipsis"
+        id="individuals"
+      >
+        Para individuos o grupos:
+      </h2>
+      <div className={styles.containerTotal}>
+        {servicesForIndividuals &&
+          servicesForIndividuals.map((service) => (
+            <div key={service._id} className={styles.containerCard}>
+              <div className={styles.containerImage}>
+                <Image
+                  className={styles.imagePropias}
+                  alt={service.title + " image"}
+                  src={urlFor(service.mainImage).url()}
+                  width={130}
+                  height={200}
+                />
+              </div>
+              <div className={styles.containerInfo}>
+                <div>
+                  <h2 className={styles.containerTitles}>{service.title}</h2>
+                  <p className={styles.containerParagraph}>
+                    {service.description}
+                  </p>
+                </div>
 
-                            </div>
+                <div className={styles.containerButton}>
+                  <button
+                    className="rounded-full bg-yellow p-1 px-6 font-semibold text-base md:text-lg"
+                    onClick={handleOpenForm}
+                  >
+                    QUIERO CONTRATAR
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
+      <h2 className="pt-32 pb-14 px-10 font-semibold md:text-xl text-ellipsis " id="organization">
+        Para organizaciones:
+      </h2>
+      <div className={styles.containerTotal}>
+        {servicesForOrganizations &&
+          servicesForOrganizations.map((service) => (
+            <div key={service._id} className={styles.containerCard}>
+              <div className={styles.containerImage}>
+                <Image
+                  className={styles.imagePropias}
+                  alt={service.title + " image"}
+                  src={urlFor(service.mainImage).url()}
+                  width={130}
+                  height={200}
+                />
+              </div>
+              <div className={styles.containerInfo}>
+                <div>
+                  <h2 className={styles.containerTitles}>{service.title}</h2>
+                  <p className={styles.containerParagraph}>
+                    {service.description}
+                  </p>
+                </div>
 
-                            <div className="flex justify-end mt-6 mr-4">
-                                <button className="rounded-full  bg-yellow p-1 px-6 font-semibold">QUIERO CONTRATAR</button>
-                            </div>
-                        </div>
-
-                    </div>
-                ))}
-        </div>
-    );
+                <div className={styles.containerButton}>
+                  <button
+                    className="rounded-full  bg-yellow p-1 px-6 font-semibold"
+                    onClick={handleOpenForm}
+                  >
+                    QUIERO CONTRATAR
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
+    </>
+  );
 };
-
-// border-red-500 border-4
 
 export default ServicesCard;

@@ -1,17 +1,27 @@
+import WeAre from "@/components/home/WeAre";
 import { Layout } from "@/components/Layout";
+import { loadTeam } from "@/lib/loadTeamMembers";
 
-const Team = () => {
+const Team = ({ team }) => {
   return (
     <>
-      <Layout 
+      <Layout
         title={"Equipo"}
-        content={"Equipo de trabajo de Consultora Enlazar."}
+        content={"Equipo de trabajo de Consultora Enlazar"}
       >
-        <h1>
-          Hola mundo desde Equipo!
-        </h1>
+      <WeAre team={team}/>
       </Layout>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const team = await loadTeam()
+  return {
+    props: {
+      team
+    }
+  }
+}
+
 export default Team;

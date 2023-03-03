@@ -5,5 +5,6 @@ import benefit from './benefits.js'
 import provider from './provider.js'
 import services from './services.js'
 import category from './category.js'
+import team from './team.js'
 
-export const schemaTypes = [course, blockContent, commission, benefit, provider, services, category]
+export const schemaTypes = [course, blockContent, commission, benefit, provider, services, category, team]

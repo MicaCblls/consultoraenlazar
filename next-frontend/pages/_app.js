@@ -4,13 +4,14 @@ import { useRouter } from "next/router";
 import CookieConsent from "react-cookie-consent";
 import Link from "next/link";
 import PrivacyPolicy from "@/components/privacyPolitics/PrivacyPolicy";
+import { googleAnalyticsId } from "@/envitoment";
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
-  /* 
+  /*  const router = useRouter();
+
   useEffect(() => {
     const handleRouteChange = (url) => {
-      window.gtag("config", process.env.NEXT_PUBLIC_ID_GOOGLE_ANALYTICS, {
+      window.gtag("config", googleAnalyticsId, {
         page_path: url,
       });
     };
@@ -36,7 +37,7 @@ export default function App({ Component, pageProps }) {
       {open ? (
         <PrivacyPolicy handleClose={handleClose} scroll={scroll} open={open} />
       ) : null}
-      {/*      <CookieConsent
+      {/* <CookieConsent
         location="bottom"
         buttonText="Sí, utilizar cookies"
         cookieName="CookieConsent"
@@ -47,6 +48,7 @@ export default function App({ Component, pageProps }) {
         style={{
           right: 0,
           left: "auto",
+          maxWidth: "500px",
           backgroundColor: "#34668b",
           flexDirection: "column",
         }}

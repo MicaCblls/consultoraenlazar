@@ -22,5 +22,10 @@
 .DS_Store
 *.pem
 
+# local env files
+.env*.local
+.env
+
+
 # Typescript
 *.tsbuildinfo
