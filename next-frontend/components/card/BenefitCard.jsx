@@ -1,6 +1,7 @@
 import { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 import styles from "./Benefits.module.css";
+import defaultImage from "@/public/images/benefits-defaultImage.png";
 
 const BenefitCard = ({ benefit, handleOpenForm }) => {
   return (
@@ -13,10 +14,20 @@ const BenefitCard = ({ benefit, handleOpenForm }) => {
               src={urlFor(benefit.mainImage).url()}
               width={90}
               height={90}
-              className="rounded-[50%] flex self-center translate-y-2 translate-x-2 shadow-2xl"
+              className="rounded-[50%] flex self-center translate-y-2 translate-x-2 shadow-2xl bg-white p-1"
             />
           </div>
-        ) : null}
+        ) : (
+          <div className={styles.cardImg}>
+            <Image
+              alt={benefit.title + " image"}
+              src={defaultImage}
+              width={150}
+              height={150}
+              className="rounded-[50%] flex self-center translate-y-2 translate-x-2 shadow-2xl bg-white p-1"
+            />
+          </div>
+        )}
         <div className={styles.cardInfo}>
           <p className={styles.textBody}>{benefit.description}</p>
         </div>

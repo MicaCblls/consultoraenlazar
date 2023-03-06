@@ -5,6 +5,8 @@ import WorkWithUsForm from "../forms/CVSubmissionForm";
 
 const WorkWithUs = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const description='Adjuntá tu CV y contanos un poco sobre vos.'
+    const title = '¡Formá parte del team Enlazar!'
 
     return (
         <div className="flex justify-center bg-grey">
@@ -27,7 +29,7 @@ const WorkWithUs = () => {
             </div>
             {
                 isOpen &&
-                <WorkWithUsForm handleClose={setIsOpen}/>
+                <WorkWithUsForm handleClose={setIsOpen} title={title} description={description}/>
             }
         </div>
     )

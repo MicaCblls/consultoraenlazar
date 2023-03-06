@@ -3,7 +3,7 @@ import { OurServices } from "@/components/home/OurServices";
 import { getClient } from "@/lib/sanity.server";
 import groq from "groq";
 
-const Services = ({ services }) => {
+const Services = ({ services } ) => {
   return (
     <>
       <Layout
@@ -32,6 +32,7 @@ export async function getStaticProps() {
     props: {
       services,
     },
+    revalidate: 1,
   };
 }
 export default Services;

@@ -80,9 +80,6 @@ export const LearnWithUs = ({ courses, benefits }) => {
             Disfrutá de nuestros beneficios:
           </h2>
           <div className="flex flex-col p-5 md:flex-row flex-wrap justify-evenly items-center mb-8">
-            {benefitsWithoutUrl?.map((benefit) => {
-              return <BenefitCard key={benefit._id} benefit={benefit} />;
-            })}
             {benefitsWithUrl?.map((benefit) => {
               return (
                 <Link
@@ -95,6 +92,15 @@ export const LearnWithUs = ({ courses, benefits }) => {
                     handleOpenForm={handleOpenForm}
                   />
                 </Link>
+              );
+            })}
+            {benefitsWithoutUrl?.map((benefit) => {
+              return (
+                <BenefitCard
+                  key={benefit._id}
+                  benefit={benefit}
+                  handleOpenForm={handleOpenForm}
+                />
               );
             })}
           </div>

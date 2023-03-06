@@ -16,10 +16,19 @@ const Team = ({ team }) => {
 };
 
 export async function getStaticProps() {
-  const team = await loadTeam()
-  return {
-    props: {
-      team
+  try {
+    const team = await loadTeam()
+    team.sort(() => Math.random() - 0.5)
+    return {
+      props: {
+        team
+      }
+    }
+  } catch (error) {
+    return {
+      props: {
+        team: null
+      }
     }
   }
 }

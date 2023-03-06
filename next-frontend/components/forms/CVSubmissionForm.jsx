@@ -14,7 +14,7 @@ const iconStyles = {
   fontSize: "1.5em",
 };
 
-const WorkWithUsForm = ({ handleClose }) => {
+const WorkWithUsForm = ({ handleClose, title, description }) => {
   const [input, setData] = useState({
     name: "",
     phone: "",
@@ -114,10 +114,10 @@ const WorkWithUsForm = ({ handleClose }) => {
             <div className="px-12 py-12 rounded-t-lg">
               <div className="pt-4">
                 <h2 className="text-darkBlue px-2 text-2xl lg:text-3xl font-semibold text-ellipsis text-center">
-                  ¡Formá parte del team Enlazar!
+                  {title}
                 </h2>
                 <p className="p-3 pb-12 font-semibold text-ellipsis text-center text-base">
-                  Adjuntá tu CV y contanos un poco sobre vos.
+                  {description}
                 </p>
               </div>
               <form

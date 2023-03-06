@@ -15,10 +15,13 @@ import WorkWithUsForm from "../forms/CVSubmissionForm";
 
 
 export const OurServices = ({ services }) => {
+
+  const servicesCvFormTitle = "¡Revisamos GRATIS tu currículum!"
+  const servicesCvFormDescription = "Adjuntá tu CV para que podamos revisarlo y darte una devolución personalizada."
+
   const [openForm, setOpenForm] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false)
-
 
   const handleOpenForm = (e) => {
     e.preventDefault();
@@ -46,7 +49,7 @@ export const OurServices = ({ services }) => {
       {openForm ? <ConsultationForm handleCloseForm={handleCloseForm} /> : null}
       {
         isOpen &&
-        <WorkWithUsForm handleClose={setIsOpen} />
+        <WorkWithUsForm handleClose={setIsOpen} title={servicesCvFormTitle} description={servicesCvFormDescription}/>
       }
 
       <div className="w-full h-full flex justify-center items-center flex-col top-0 bottom-0 right-0 left-0">
@@ -149,7 +152,7 @@ export const OurServices = ({ services }) => {
               <br /> empleabilidad y desarrollo profesional.
             </p>
 
-            <button className="rounded-full font-semibold bg-yellow py-1 px-4 uppercase text-xs sm:max-md:text-base md:text-lg" onClick={handleOpenCv}>
+            <button className="rounded-full font-semibold bg-yellow py-1 px-4 uppercase text-xs sm:max-md:text-base md:text-lg md:py-2 md:px-8" onClick={handleOpenCv}>
               Me Interesa
             </button>
 

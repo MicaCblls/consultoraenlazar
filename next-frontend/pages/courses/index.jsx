@@ -49,6 +49,7 @@ export async function getStaticProps() {
       courses,
       benefits,
     },
+    revalidate: 1,
   };
 }
 
