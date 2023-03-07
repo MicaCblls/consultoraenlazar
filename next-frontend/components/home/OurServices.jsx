@@ -8,20 +8,18 @@ import { useState } from "react";
 import Link from "next/link";
 
 import styles from "./OurServices.module.css";
-import coverImage from "public/images/portada-servicios.webp"
-import coverImageCv from "public/images/revision-cv-gratis.webp"
+import coverImage from "public/images/portada-servicios.webp";
+import coverImageCv from "public/images/revision-cv-gratis.webp";
 import WorkWithUsForm from "../forms/CVSubmissionForm";
 
-
-
 export const OurServices = ({ services }) => {
-
-  const servicesCvFormTitle = "¡Revisamos GRATIS tu currículum!"
-  const servicesCvFormDescription = "Adjuntá tu CV para que podamos revisarlo y darte una devolución personalizada."
+  const servicesCvFormTitle = "¡Revisamos GRATIS tu currículum!";
+  const servicesCvFormDescription =
+    "Adjuntá tu CV para que podamos revisarlo y darte una devolución personalizada.";
 
   const [openForm, setOpenForm] = useState(false);
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenForm = (e) => {
     e.preventDefault();
@@ -33,10 +31,10 @@ export const OurServices = ({ services }) => {
     setOpenForm(false);
   };
 
-  const handleOpenCv = (e)=>{
-    e.preventDefault()
-    setIsOpen(true)
-  }
+  const handleOpenCv = (e) => {
+    e.preventDefault();
+    setIsOpen(true);
+  };
 
   const organizaciones = services.filter(
     (item) => item.categories[0].categoryName.toLowerCase() === "organizaciones"
@@ -47,10 +45,13 @@ export const OurServices = ({ services }) => {
   return (
     <>
       {openForm ? <ConsultationForm handleCloseForm={handleCloseForm} /> : null}
-      {
-        isOpen &&
-        <WorkWithUsForm handleClose={setIsOpen} title={servicesCvFormTitle} description={servicesCvFormDescription}/>
-      }
+      {isOpen && (
+        <WorkWithUsForm
+          handleClose={setIsOpen}
+          title={servicesCvFormTitle}
+          description={servicesCvFormDescription}
+        />
+      )}
 
       <div className="w-full h-full flex justify-center items-center flex-col top-0 bottom-0 right-0 left-0">
         <div className={styles.containerCover}>
@@ -58,23 +59,29 @@ export const OurServices = ({ services }) => {
             src={coverImage}
             alt="imagen cover"
             priority={true}
+            quality={100}
             width={1000}
             height={1000}
             className="w-full "
           />
-          <div className=" text-white font-bold w-auto  text-center  drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))]   absolute" style={{ fontSize: "clamp(0.8rem, 0.4794rem + 1.7099vw, 2.2rem)" }}>
+          <div
+            className=" text-white font-bold w-auto  text-center  drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))]   absolute"
+            style={{ fontSize: "clamp(0.8rem, 0.4794rem + 1.7099vw, 2.2rem)" }}
+          >
             Nuestros servicios están orientados a todas
             <br />
             las áreas que involucran el capital humano
             <br />
             garantizando la mayor profesionalidad.
           </div>
-
         </div>
 
         <div className=" bg-[#bbcacf] flex flex-col text-center justify-center w-full gap-10 p-8 h-auto pb-20">
           <div className="flex ">
-            <h2 className="text-2xl text-ellipsis font-semibold" style={{ padding: "clamp(1.5rem, 1.271rem + 1.2214vw, 2.5rem)" }}>
+            <h2
+              className="text-2xl text-ellipsis font-semibold"
+              style={{ padding: "clamp(1.5rem, 1.271rem + 1.2214vw, 2.5rem)" }}
+            >
               ¿Para quiénes los ofrecemos?
             </h2>
           </div>
@@ -112,9 +119,7 @@ export const OurServices = ({ services }) => {
                   height={200}
                 />
                 <div className="p-6 ">
-                  <p className="text-white  mb-4 text-lg">
-                    Organizaciones
-                  </p>
+                  <p className="text-white  mb-4 text-lg">Organizaciones</p>
                   <Link href={"#organization"}>
                     <button className="rounded-full  bg-yellow p-2 px-4 font-semibold">
                       QUIERO SABER +
@@ -138,24 +143,38 @@ export const OurServices = ({ services }) => {
             src={coverImageCv}
             alt="imagen cover"
             priority={true}
+            quality={100}
             width={1000}
             height={1000}
             className="w-full "
           />
-          <div className="w-full min-h-max drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))] flex flex-col items-center justify-center absolute" >
-
-            <h2 className="text-white font-semibold px-4 text-center mb-0 drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))]" style={{ fontSize: "clamp(0.8rem, 0.4794rem + 1.7099vw, 2.2rem)", paddingBottom: "clamp(0.2rem, 0.1313rem + 0.3664vw, 0.5rem)" }}>
+          <div className="w-full min-h-max drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))] flex flex-col items-center justify-center absolute">
+            <h2
+              className="text-white font-semibold px-4 text-center mb-0 drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))]"
+              style={{
+                fontSize: "clamp(0.8rem, 0.4794rem + 1.7099vw, 2.2rem)",
+                paddingBottom: "clamp(0.2rem, 0.1313rem + 0.3664vw, 0.5rem)",
+              }}
+            >
               ¡RECURSOS GRATIS!
             </h2>
-            <p className="text-white pb-2 px-4 text-center mb-0 drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))]" style={{ fontSize: "clamp(0.7rem, 0.5168rem + 0.9771vw, 1.5rem)", paddingBottom: "clamp(0.5rem, 0.3282rem + 0.916vw, 1.25rem)" }}>
+            <p
+              className="text-white pb-2 px-4 text-center mb-0 drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))]"
+              style={{
+                fontSize: "clamp(0.7rem, 0.5168rem + 0.9771vw, 1.5rem)",
+                paddingBottom: "clamp(0.5rem, 0.3282rem + 0.916vw, 1.25rem)",
+              }}
+            >
               Conocé todos los recursos gratuitos que ofrecemos sobre
               <br /> empleabilidad y desarrollo profesional.
             </p>
 
-            <button className="rounded-full font-semibold bg-yellow py-1 px-4 uppercase text-xs sm:max-md:text-base md:text-lg md:py-2 md:px-8" onClick={handleOpenCv}>
+            <button
+              className="rounded-full font-semibold bg-yellow py-1 px-4 uppercase text-xs sm:max-md:text-base md:text-lg"
+              onClick={handleOpenCv}
+            >
               Me Interesa
             </button>
-
           </div>
         </div>
       </div>

@@ -49,10 +49,10 @@ export const Footer = () => {
         style={gradient}
         className="flex flex-col items-center justify-center w-full "
       >
-        <div className="h-max flex justify-center items-center flex-col w-full px-4 py-14 xl:flex-row xsm:max-sm:pb-0 xsm:max-sm:px-0">
-          <div className="flex flex-row xsm:max-lg:flex-col justify-center items-center xsm:max-sm:w-full">
+        <div className="h-max flex justify-center items-center flex-col w-full px-4 py-14 xsm:max-sm:pb-0 xsm:max-sm:px-0">
+          <div className="flex flex-row xsm:max-xl:flex-col justify-center items-center xsm:max-sm:w-full">
             <div className="flex flex-row justify-center items-center ">
-              <div className="pt-3 px-0 pb-4 xsm:max-sm:hidden ">
+              <div className="pt-3 px-0 pb-4 xsm:max-md:hidden ">
                 <Link href="#">
                   <Image
                     className="min-w-[60px]"
@@ -63,29 +63,43 @@ export const Footer = () => {
                   />
                 </Link>
               </div>
-              <div className="flex flex-row justify-center items-center m-0 list-none md:max-sm:w-full md:max-sm:pt-12 xsm:max-sm:flex-col">
-                <ul className="flex flex-row border-r-0 justify-center items-center self-center no-underline text-white list-none xsm:max-sm:flex-col xl:border-r-[1px] xl:border-solid xl:border-r-yellow py-2 px-2 xsm:max-sm:p-0 ">
-                  <li className="sm:border-r sm:border-solid sm:border-r-white px-2 py-0 xsm:max-sm:pb-3">
+              <div className="flex flex-row justify-center items-center m-0 list-none w-full md:max-sm:pt-12 xsm:max-xl:flex-col">
+                <ul className="flex flex-row border-r-0 justify-center items-center self-center no-underline text-white list-none xsm:max-md:flex-col py-2 px-2 xsm:max-md:p-0 ">
+                  {/* xl:border-r-[1px] xl:border-solid xl:border-r-yellow  */}
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
                     <Link href="/team" className="hover:font-bold">
                       Equipo
                     </Link>
                   </li>
-                  <li className="sm:border-r sm:border-solid sm:border-r-white px-2 py-0 xsm:max-sm:pb-3">
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
                     <Link href="/services" className="hover:font-bold">
                       Servicios
                     </Link>
                   </li>
-                  <li className="sm:border-r sm:border-solid sm:border-r-white px-2 py-0 xsm:max-sm:pb-3">
+                  <li className="md:border-r md:border-solid md:border-r-white pl-2 pr-2 xsm:max-md:pb-3">
+                    <Link
+                      href="/courses"
+                      className="hover:font-bold whitespace-nowrap"
+                    >
+                      Cursos & Capacitaciones
+                    </Link>
+                  </li>
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
                     <Link href="/community" className="hover:font-bold">
                       Comunidad
                     </Link>
                   </li>
-                  <li className="sm:border-r sm:border-solid sm:border-r-white px-2 py-0 xsm:max-sm:pb-3">
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
                     <Link href="/blog" className="hover:font-bold">
                       Blog
                     </Link>
                   </li>
-                  <li className="sm:border-r sm:border-solid sm:border-r-white px-2 py-0 xsm:max-sm:pb-3">
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 xsm:max-md:pb-3">
+                    <Link href="/contact" className="hover:font-bold">
+                      Contacto
+                    </Link>
+                  </li>
+                  <li className=" px-2 py-0 xsm:max-md:pb-3">
                     <button
                       onClick={handleClickOpen}
                       className="hover:font-bold whitespace-nowrap"
@@ -93,33 +107,16 @@ export const Footer = () => {
                       Politica de Privacidad
                     </button>
                   </li>
-                  <li className="pl-2 pr-2 xsm:max-sm:pb-3">
-                    <Link href="/contact" className="hover:font-bold">
-                      Contacto
-                    </Link>
-                  </li>
                 </ul>
               </div>
-            </div>
-            <div className="flex flex-row justify-center items-center m-0">
-              <ul className="flex flex-row border-r-0 justify-center items-center no-underline text-white list-none mb-0 xl:border-r-[1px] xl:border-solid xl:border-r-yellow py-2 xsm:max-sm:p-0 ">
-                <li
-                  className="pr-8 xsm:max-sm:pb-6 xsm:max-sm:pr-0"
-                  style={clampedPadding}
-                >
-                  <Link href="/courses" className="hover:font-bold">
-                    Cursos & Capacitaciones
-                  </Link>
-                </li>
-              </ul>
             </div>
           </div>
           <div className="flex flex-row justify-center items-center m-0 xsm:max-sm:w-full">
             <div className="flex flex-row justify-center items-center list-none text-white mb-0 ">
               <ul className="flex flex-row justify-center items-center no-underline text-white py-2 pr-0 xsm:max-sm:py-2 xsm:max-sm:px-0 ">
-                <li className="  xsm:max-sm:hidden" style={clampedPadding}>
+                {/* <li className="  xsm:max-sm:hidden" style={clampedPadding}>
                   Descubrí nuestra comunidad
-                </li>
+                </li> */}
                 <li className="hover:scale-y-105 hover:scale-x-105 py-0 px-[0.6rem]">
                   <Link
                     href="https://www.instagram.com/enlazar.ok/"
@@ -168,7 +165,7 @@ export const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="pt-3 px-0 pb-4 hidden xsm:max-sm:block xsm:max-sm:pt-4 ">
+          <div className="pt-3 px-0 pb-4 hidden xsm:max-md:block xsm:max-md:pt-4 ">
             <Link href="#">
               <Image
                 width={60}

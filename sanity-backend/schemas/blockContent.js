@@ -12,6 +12,7 @@ export default {
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
+        {title: 'H5', value: 'h5'},
       ],
       lists: [{title: 'Bullet', value: 'bullet'}],
       marks: {
@@ -29,6 +30,5 @@ export default {
         ],
       },
     },
-    {type: 'image', options: {hotspot: true}},
   ],
 }

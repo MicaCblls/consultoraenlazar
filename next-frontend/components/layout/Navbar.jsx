@@ -39,6 +39,7 @@ export const Navbar = () => {
               style={{
                 width: "200px",
                 height: "37.5px",
+                objectFit: "scale-down",
               }}
               priority={true}
               alt="Consultora Enlazar Logo"
