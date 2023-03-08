@@ -1,77 +1,114 @@
 import React from 'react';
 import Image from "next/image";
+import styles from "./Companies.module.css";
+
 
 export const CompaniesThatTrust = () => {
+ 
   return (
+
     <div className="w-full h-auto ">
-      <h3 className="pt-16 px-4 md:px-8 text-2xl md:text-3xl font-bold text-center text-ellipsis opacity-90">
+      <h2 className="pt-10 px-4 md:px-8 text-1xl md:text-2xl font-bold text-center text-ellipsis opacity-90">
         Empresas que confían en nosotros
-      </h3>
-
-      <div className="flex flex-col p-5 md:flex-row flex-wrap justify-evenly items-center mb-8 w-full ">
-        <Image
-          className=" shadow-2xl outline-offset-8 m-2 w-auto h-auto animate-pulse "
-          src="/images/henry.png"
-          width={80}
-          height={40}
-          alt="henry"
-        />
-
-        <Image
-          className="shadow-2xl outline-offset-8 m-2 w-auto h-auto animate-pulse"
-          src="/images/empujar.png"
-          width={80}
-          height={40}
-          alt="empujar"
-        />
-
-
-        <Image
-          className="shadow-2xl outline-offset-8 m-2 w-auto h-auto animate-pulse "
-          src="/images/coderhouse.jpg"
-          width={100}
-          height={40}
-          alt="coderhouse"
-        />
-
-        <Image
-          className="shadow-2xl outline-offset-8 m-2  w-auto h-auto animate-pulse"
-          src="/images/workn.png"
-          width={80}
-          height={80}
-          alt="workn"
-        />
-        <Image
-          className="shadow-2xl outline-offset-8 m-2 w-auto h-auto animate-pulse"
-          src="/images/logoUBA-beneficio.png"
-          width={50}
-          height={50}
-          alt="UBA"
-        />
-        <Image
-          className="shadow-2xl outline-offset-8 m-2 w-auto h-auto animate-pulse"
-          src="/images/mudafy.webp"
-          width={50}
-          height={50}
-          alt="mudafy"
-        />
-
-        <Image
-          className="shadow-2xl outline-offset-8 m-2 w-auto h-auto animate-pulse "
-          src="/images/payhouslogo-beneficio.jpg"
-          width={60}
-          height={60}
+      </h2>
+    
+    <div className=" w-full h-auto   ">
+      <div className= {styles.slider}>
+        <div  className= " flex  w-full  text-center justify-content-center mb-10 mt-10  ">
+        <div className= {styles.slide}>
+  <Image
+          className="  outline-offset-8  w-auto h-auto "
+          src="/images/logos-empresas/logo-pay.png"
+          width={200}
+          height={200}
           alt="payhous"
         />
-
-        <Image
-          className="shadow-2xl outline-offset-8 m-2 w-auto h-auto animate-pulse"
-          src="/images/duhire.png"
-          width={50}
-          height={35}
+  </div>
+  <div className= {styles.slide}>
+  <Image
+          className="  outline-offset-8   w-auto h-auto "
+          src="/images/logos-empresas/empujar.png"
+          width={200}
+          height={200}
+          alt="empujar"
+        />
+  </div>
+  <div className= {styles.slide}>
+  <Image
+          className="  outline-offset-8  w-auto h-auto "
+          src="/images/logos-empresas/coderhouse.png"
+          width={200}
+          height={200}
+          alt="coderhouse"
+        />
+  </div>
+  <div className= {styles.slide}>
+  <Image
+          className="  outline-offset-8  w-auto h-auto "
+          src="/images/logos-empresas/workn.png"
+          width={200}
+          height={50}
+          alt="workn"
+        /> 
+  </div>
+  <div className=  {styles.slide}>
+  <Image
+          className="  outline-offset-8    w-auto h-auto "
+          src="/images/logos-empresas/henry.png"
+          width={200}
+          height={100}
+          alt="henry"
+        />
+  </div>
+  
+  <div className= {styles.slide}>
+  <Image
+          className="  outline-offset-8  w-auto h-auto "
+          src="/images/logos-empresas/uba.png"
+          width={200}
+          height={200}
+          alt="UBA"
+        />
+  </div>
+  <div className= {styles.slide}>
+  <Image
+          className=" outline-offset-8  w-auto h-auto "
+          src="/images/logos-empresas/mudafy.png"
+          width={200}
+          height={100}
+          alt="mudafy"
+        />
+  </div>
+  <div className= {styles.slide}>
+  <Image
+          className="  outline-offset-8 w-auto h-auto "
+          src="/images/logos-empresas/duhire.png"
+          width={200}
+          height={100}
           alt="duhire"
         />
-      </div>
-    </div>
+  </div>
+  <div className= {styles.slide}>
+  <Image
+          className="  outline-offset-8  w-auto h-auto "
+          src="/images/logos-empresas/linkedIn.png"
+          width={200}
+          height={100}
+          alt="linkedin"
+        />
+  </div>
+  <div className= {styles.slide}>
+  <Image
+          className="  outline-offset-8   w-auto h-auto "
+          src="/images/logos-empresas/empujar.png"
+          width={200}
+          height={200}
+          alt="empujar"
+        />
+  </div>
+  </div>
+</div>
+</div>
+</div>        
   );
 };
