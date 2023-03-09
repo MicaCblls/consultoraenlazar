@@ -18,7 +18,6 @@ const Team = ({ team }) => {
 export async function getStaticProps() {
   try {
     const team = await loadTeam()
-    team.sort(() => Math.random() - 0.5)
     return {
       props: {
         team

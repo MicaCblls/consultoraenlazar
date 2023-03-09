@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import closeIcon from "public/images/x-cerrar.svg";
 
@@ -14,7 +14,7 @@ const iconStyles = {
   fontSize: "1.5em",
 };
 
-const WorkWithUsForm = ({ handleClose, title, description }) => {
+const WorkWithUsForm = ({ handleClose, title, description, uploadOpt = true }) => {
   const [input, setData] = useState({
     name: "",
     phone: "",
@@ -27,9 +27,13 @@ const WorkWithUsForm = ({ handleClose, title, description }) => {
     name: " ",
     phone: " ",
     email: " ",
-    comments: "",
+    comments: " ",
     attachment: " ",
   });
+
+  useEffect(() => {
+    if (!uploadOpt) setErrors((prev) => ({ ...prev, attachment: "" }))
+  }, [])
 
   const validate = (input) => {
     if (input.name === "email") {
@@ -191,7 +195,7 @@ const WorkWithUsForm = ({ handleClose, title, description }) => {
                   </div>
                 </div>
                 <div className="flex pt-3 justify-end self-center">
-                  <div className="flex flex-col items-center">
+                  <div className={uploadOpt ? "flex flex-col items-center" : 'hidden'}>
                     <label
                       className="box-border border-2 border-yellow rounded-2xl  px-8 font-semibold uppercase self-center "
                       htmlFor="cv"
