@@ -1,8 +1,13 @@
+import React from 'react';
 import MemberCard from "./MemberCard";
 import Skeleton from "@mui/material/Skeleton";
 import Box from "@mui/material/Box";
 
-const TeamCards = ({ team }) => {
+const TeamCards = ( props ) => {
+	const [ team, setTeam ] = React.useState()
+	React.useEffect(() => {
+	  setTeam(props.team.sort(() => Math.random() - 0.5))
+	}, [])
 	return (
 		<div className='bg-blue flex justify-center'>
 			<div className='flex flex-wrap w-9/12 sm:justify-center lg:justify-start lg:py-12'>
@@ -23,9 +28,9 @@ const TeamCards = ({ team }) => {
 										</Box>
 									</Box>
 							  ))
-							: team.sort(() => Math.random() - 0.5).map((member, index) => (
+							: team.map((member, index) => (
 									<MemberCard
-										key={index}
+										key={member._id}
 										image={member.photo}
 										name={member.name}
 										jobTitle={member.jobTitle}
