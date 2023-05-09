@@ -14,6 +14,7 @@ const Values = () => {
           <Image
             src={values}
             alt="Nuestros valores"
+            priority={true}
             width="1200"
             height="1200"
           ></Image>

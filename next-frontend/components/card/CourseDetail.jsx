@@ -6,7 +6,6 @@ import styles from "./CourseDetail.module.css";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { height } from "@mui/system";
 
 const DetailsComponents = {
   block: {
@@ -89,7 +88,6 @@ export default function Details({
       );
     }
   };
-  console.log(course);
   return (
     <>
       <ToastContainer

@@ -48,7 +48,7 @@ export const Blogs = ({ blogs }) => {
                 <p className="text-center text-ellipsis pt-2 pb-4 px-4 overflow-y-auto max-h-56">
                   {blog.description}
                 </p>
-                <Link href={"/blogDetail/" + blog.slug.current}>
+                <Link href={"/blogDetail/" + blog.slug.current + "#top"}>
                   <button
                     className="text-dark bg-yellow inline-block align-middle text-center select-none whitespace-no-wrap rounded-full mb-4 py-1 px-6 sm:px-10 leading-normal no-underline font-bold ease-in-out duration-200 hover:scale-105 uppercase"
                     /* onClick={handleClickOpen} */

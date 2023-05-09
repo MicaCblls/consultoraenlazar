@@ -12,8 +12,10 @@
   justify-content: center;
   margin-bottom: 10px;
   margin-top: 10px;
-  width: 200rem;
+  width: 150rem;
   animation: move 40s linear infinite;
+  animation-play-state: running;
+  will-change: transform;
 }
 .slider .slide {
   width: 200px;
