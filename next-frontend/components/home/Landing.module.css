@@ -1,0 +1,17 @@
+.textContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-bottom: 0;
+  font-size: clamp(1rem, 0.6901rem + 1.6529vw, 2.25rem);
+  font-weight: 500;
+  color: white;
+  font-family: "Noah Text";
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}

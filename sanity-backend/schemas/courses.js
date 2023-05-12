@@ -7,6 +7,7 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Título',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -30,10 +31,16 @@ export default {
       validation: (Rule) => Rule.required().positive(),
     },
     {
+      name: 'inscriptionLink',
+      type: 'string',
+      title: 'Link Google Form',
+    },
+    {
       name: 'mainImage',
       type: 'image',
       title: 'Imagen',
       options: {hotspot: true},
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'commissions',
@@ -45,6 +52,7 @@ export default {
       name: 'description',
       type: 'text',
       title: 'Sinopsis',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'body',
@@ -56,11 +64,6 @@ export default {
       type: 'reference',
       title: 'Proveedor',
       to: {type: 'provider'},
-    },
-    {
-      name: 'publishedAt',
-      type: 'datetime',
-      title: 'Fecha de publicación',
     },
   ],
 }

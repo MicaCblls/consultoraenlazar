@@ -1,39 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import logoIndividuos from "public/images/card-individuos-grupos.webp";
 import logoOrg from "public/images/card-empresas.webp";
 import Image from "next/image";
 import ServicesCard from "@/components/card/ServicesCard";
 import ConsultationForm from "../../components/forms/ConsultationForm";
-import { useState } from "react";
+
 import Link from "next/link";
 
 import styles from "./OurServices.module.css";
 import coverImage from "public/images/portada-servicios.webp";
 import coverImageCv from "public/images/revision-cv-gratis.webp";
 import WorkWithUsForm from "../forms/CVSubmissionForm";
+import { useSession } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/router";
+import { useAuth } from "@/lib/AuthContext";
 
 export const OurServices = ({ services }) => {
-  const servicesCvFormTitle = "¡Revisamos GRATIS tu currículum!";
+  const servicesCvFormTitle = "¡RECURSOS GRATIS!";
   const servicesCvFormDescription =
-    "Adjuntá tu CV para que podamos revisarlo y darte una devolución personalizada.";
+    "Conocé todos los recursos gratuitos que ofrecemos sobre empleabilidad y desarrollo profesional.";
 
   const [openForm, setOpenForm] = useState(false);
-
   const [isOpen, setIsOpen] = useState(false);
+  const [title, setTitle] = useState("");
+  const [section, setSection] = useState("");
+  const { setCurrentPath, setPreviousPath } = useAuth();
+  const session = useSession();
+  const route = useRouter();
 
   const handleOpenForm = (e) => {
     e.preventDefault();
+    setTitle(e.target.title);
+    setSection(e.target.value);
     setOpenForm(true);
   };
 
   const handleCloseForm = (e) => {
     e.preventDefault();
+    setTitle("");
     setOpenForm(false);
   };
 
   const handleOpenCv = (e) => {
     e.preventDefault();
-    setIsOpen(true);
+    if (session) {
+      setIsOpen(true);
+    } else {
+      setPreviousPath("/services#freeResources");
+      setCurrentPath("/auth");
+      route.push("/auth");
+    }
   };
 
   const organizaciones = services.filter(
@@ -42,14 +58,23 @@ export const OurServices = ({ services }) => {
   const individuos = services.filter(
     (item) => item.categories[0].categoryName.toLowerCase() === "individuos"
   );
+
   return (
     <>
-      {openForm ? <ConsultationForm handleCloseForm={handleCloseForm} /> : null}
+      {openForm ? (
+        <ConsultationForm
+          title={title}
+          setTitle={setTitle}
+          handleCloseForm={handleCloseForm}
+          section={section}
+        />
+      ) : null}
       {isOpen && (
         <WorkWithUsForm
           handleClose={setIsOpen}
           title={servicesCvFormTitle}
           description={servicesCvFormDescription}
+          uploadOpt={false}
         />
       )}
 
@@ -65,22 +90,23 @@ export const OurServices = ({ services }) => {
             className="w-full "
           />
           <div
-            className=" text-white font-bold w-auto  text-center  drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))]   absolute"
-            style={{ fontSize: "clamp(0.8rem, 0.4794rem + 1.7099vw, 2.2rem)" }}
+            className=" text-white font-bold w-auto  text-center  drop-shadow-[(4px 4px 10px rgba(0, 0, 0, 0.25))]  absolute"
+            style={{ fontSize: "clamp(1rem, 0.7025rem + 1.5868vw, 2.2rem)" }}
           >
-            Nuestros servicios están orientados a todas
+            Servicios personalizados de calidad
             <br />
-            las áreas que involucran el capital humano
-            <br />
-            garantizando la mayor profesionalidad.
+            con profesionalismo garantizado.
           </div>
         </div>
 
         <div className=" bg-[#bbcacf] flex flex-col text-center justify-center w-full gap-10 p-8 h-auto pb-20">
           <div className="flex ">
             <h2
-              className="text-2xl text-ellipsis font-semibold"
-              style={{ padding: "clamp(1.5rem, 1.271rem + 1.2214vw, 2.5rem)" }}
+              className="text-ellipsis font-semibold"
+              style={{
+                padding: "clamp(1.5rem, 1.271rem + 1.2214vw, 2.5rem)",
+                fontSize: "clamp(1.2rem, 1.076rem + 0.6612vw, 1.7rem)",
+              }}
             >
               ¿Para quiénes los ofrecemos?
             </h2>
@@ -138,7 +164,7 @@ export const OurServices = ({ services }) => {
           />
         </div>
 
-        <div className={styles.containerCover}>
+        <div className={styles.containerCover} id="freeResources">
           <Image
             src={coverImageCv}
             alt="imagen cover"
@@ -170,7 +196,7 @@ export const OurServices = ({ services }) => {
             </p>
 
             <button
-              className="rounded-full font-semibold bg-yellow py-1 px-4 uppercase text-xs sm:max-md:text-base md:text-lg"
+              className="rounded-full font-semibold bg-yellow py-1 px-4 uppercase text-xs sm:max-md:text-base md:text-lg lg:py-2"
               onClick={handleOpenCv}
             >
               Me Interesa

@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { googleAnalyticsId } from "@/envitoment";
+import { googleAnalyticsId } from "@/lib/enviroment";
 
 export default function Document() {
   return (

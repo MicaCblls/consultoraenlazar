@@ -3,8 +3,12 @@ import Head from "next/head";
 import { Navbar } from "./layout/Navbar";
 import { Footer } from "./layout/Footer";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import Image from "next/image";
 
 export const Layout = ({ title, content, children }) => {
+  const route = useRouter();
+
   return (
     <>
       <Head>
@@ -19,7 +23,7 @@ export const Layout = ({ title, content, children }) => {
           name="keywords"
           content="Recursos humanos, psicologia, psicología laboral, consultora enlazar, enlazar, consultoría, relaciones laborales, trabajo, educación, capital humano, talento, cursos, cursos online, capacitaciones, webinars gratuitos, curriculum, revisión de cv, empleabilidad, orientación vocacional, calidad de trabajo, comunidad, encontrar empleo, desarrollo profesional, reclutamiento, selección de personal, recruiting, coaching, acompañamiento personalizado, asesorías, recursos gratis, consultas, cosching, experiencia laboral,"
         />
-        <title>{title} - Consultora Enlazar</title>
+        <title>{title}</title>
         <link rel="icon" href="/images/favicon/favicon.ico" />
         <link
           rel="apple-touch-icon"
@@ -108,9 +112,25 @@ export const Layout = ({ title, content, children }) => {
       </Head>
       <>
         <Navbar />
-        <main className="w-full flex flex-1 flex-wrap justify-center items-center  mx-auto h-auto relative pt-28 text-dark">
+        <main
+          id="top"
+          className="w-full flex flex-1 flex-wrap justify-center items-center  mx-auto h-auto relative pt-28 text-dark"
+        >
           {children}
         </main>
+        <Link
+          href="https://wa.me/5491133130958/?text=Hola Consultora Enlazar, quería realizarles una consulta..."
+          target="_blank"
+        >
+          <Image
+            src="/images/logo-whatsapp.svg"
+            alt="Logo WhatsApp"
+            width={50}
+            height={50}
+            priority
+            className="fixed bottom-5 right-5 hover:w-[52px] hover:transition-all z-10 drop-shadow-lg"
+          />
+        </Link>
         <Footer />
       </>
     </>

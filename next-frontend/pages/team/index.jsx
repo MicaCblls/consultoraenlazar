@@ -9,7 +9,7 @@ const Team = ({ team }) => {
         title={"Equipo"}
         content={"Equipo de trabajo de Consultora Enlazar"}
       >
-      <WeAre team={team}/>
+        <WeAre team={team} />
       </Layout>
     </>
   );
@@ -17,18 +17,19 @@ const Team = ({ team }) => {
 
 export async function getStaticProps() {
   try {
-    const team = await loadTeam()
+    const team = await loadTeam();
     return {
       props: {
-        team
-      }
-    }
+        team,
+      },
+      revalidate: 1,
+    };
   } catch (error) {
     return {
       props: {
-        team: null
-      }
-    }
+        team: null,
+      },
+    };
   }
 }
 

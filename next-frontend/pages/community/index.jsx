@@ -1,17 +1,16 @@
 import { Layout } from "@/components/Layout";
+import Community from "@/components/community/Community";
 
-const Community = () => {
+const OurCommunity = () => {
   return (
     <>
       <Layout 
         title={"Comunidad"}
         content={"Consultora Enlazar - Sumate a nuestra comunidad."}
       >
-        <h1>
-          Hola mundo desde comunidad!
-        </h1>
+        <Community/>
       </Layout>
     </>
   );
 };
-export default Community;
+export default OurCommunity;

@@ -1,14 +1,15 @@
 import { Layout } from "@/components/Layout";
-import { ContactUs } from "@/components/home/ContactUs";
 import { Feedback } from "@/components/home/Feedback";
 import { Goal } from "@/components/home/Goal";
 import { Landing } from "@/components/home/Landing";
-import { LearnWithUs } from "@/components/home/LearnWithUs";
-import { OurServices } from "@/components/home/OurServices";
-import { WeAre } from "@/components/home/WeAre";
 import { CompaniesThatTrust } from "@/components/home/CompaniesThatTrust";
+import ContactUsForm from "@/components/forms/ContactUsForm";
+import KnowOurServices from "@/components/home/KnowOurServices";
+import LearnWithUsHero from "@/components/home/LearnWithUsHero";
+import { getClient } from "@/lib/sanity.server";
+import groq from "groq";
 
-const Home = () => {
+const Home = ({ companies }) => {
   return (
     <>
       <Layout
@@ -17,17 +18,32 @@ const Home = () => {
       >
         <>
           <Landing />
-          <CompaniesThatTrust />
-          {/*<WeAre/>
-          <Goal/>
-          <OurServices/>
-          <LearnWithUs/>
-          <Feedback/>
-          <CompaniesThatTrust/>
-          <ContactUs/>*/}
+          <Goal />
+          <KnowOurServices />
+          <LearnWithUsHero />
+          <Feedback />
+          <CompaniesThatTrust companies={companies} />
+          <ContactUsForm />
         </>
       </Layout>
     </>
   );
 };
 export default Home;
+
+export async function getStaticProps() {
+  const companies = await getClient().fetch(
+    groq`*[_type == "company"] | order(title asc){
+      _id,
+      title,
+      mainImage,
+    }`
+  );
+
+  return {
+    props: {
+      companies,
+    },
+    revalidate: 1,
+  };
+}
