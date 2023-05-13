@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Navbar } from "./layout/Navbar";
 import { Footer } from "./layout/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Layout = ({ title, content, children }) => {
   return (
