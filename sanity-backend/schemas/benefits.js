@@ -3,7 +3,7 @@ export default {
   type: 'document',
   title: 'Beneficios',
   fields: [
-    {name: 'title', type: 'string', title: 'Título', validation: (Rule) => Rule.required()},
+    {name: 'title', type: 'string', title: 'Título'},
     {
       name: 'slug',
       title: 'Identificador',
@@ -18,7 +18,6 @@ export default {
       type: 'image',
       title: 'Imagen',
       options: {hotspot: true},
-      validation: (Rule) => Rule.required(),
     },
     {
       title: 'URL',
@@ -26,11 +25,6 @@ export default {
       type: 'object',
       fields: [{title: 'URL', name: 'href', type: 'url'}],
     },
-    {
-      name: 'description',
-      type: 'text',
-      title: 'Descripción',
-      validation: (Rule) => Rule.required(),
-    },
+    {name: 'description', type: 'text', title: 'Descripción'},
   ],
 }

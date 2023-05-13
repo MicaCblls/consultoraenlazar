@@ -1,13 +1,13 @@
 export default {
   name: 'team',
   type: 'document',
-  title: 'Equipo',
+  title: 'Team',
   fields: [
     {
       name: 'name',
       type: 'string',
       title: 'Nombre',
-      validation: (Rule) => Rule.required().max(30),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'photo',
@@ -16,16 +16,10 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'jobFirstLine',
+      name: 'jobTitle',
       type: 'string',
-      title: 'Puesto/Cargo. Linea 1',
-      validation: (Rule) => Rule.required().max(30),
-    },
-    {
-      name: 'jobSecondLine',
-      type: 'string',
-      title: 'Puesto/Cargo. Linea 2',
-      validation: (Rule) => Rule.max(30),
+      title: 'Puesto/Cargo',
+      validation: (Rule) => Rule.required(),
     },
   ],
 }

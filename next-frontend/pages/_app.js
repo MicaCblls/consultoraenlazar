@@ -4,10 +4,7 @@ import { useRouter } from "next/router";
 import CookieConsent from "react-cookie-consent";
 import Link from "next/link";
 import PrivacyPolicy from "@/components/privacyPolitics/PrivacyPolicy";
-import { googleAnalyticsId, supabaseKey, supabaseUrl } from "@/lib/enviroment";
-import { SessionContextProvider, useUser } from "@supabase/auth-helpers-react";
-import supabase from "@/lib/supabaseClient";
-import { AuthProvider } from "../lib/AuthContext";
+import { googleAnalyticsId } from "@/envitoment";
 
 export default function App({ Component, pageProps }) {
   /*  const router = useRouter();
@@ -23,8 +20,7 @@ export default function App({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-  */
-
+ */
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState("paper");
 
@@ -35,24 +31,13 @@ export default function App({ Component, pageProps }) {
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
     <>
-      <AuthProvider supabase={supabase}>
-        <SessionContextProvider
-          supabaseClient={supabase}
-          initialSession={pageProps.initialSession}
-        >
-          <Component {...pageProps} />
-          {open ? (
-            <PrivacyPolicy
-              handleClose={handleClose}
-              scroll={scroll}
-              open={open}
-            />
-          ) : null}
-
-          {/* <CookieConsent
+      <Component {...pageProps} />
+      {open ? (
+        <PrivacyPolicy handleClose={handleClose} scroll={scroll} open={open} />
+      ) : null}
+      {/* <CookieConsent
         location="bottom"
         buttonText="Sí, utilizar cookies"
         cookieName="CookieConsent"
@@ -99,8 +84,6 @@ export default function App({ Component, pageProps }) {
           <strong>Política de Protección de Datos</strong>
         </Link>
       </CookieConsent> */}
-        </SessionContextProvider>
-      </AuthProvider>
     </>
   );
 }

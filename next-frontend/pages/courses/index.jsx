@@ -1,7 +1,9 @@
 import { LearnWithUs } from "@/components/home/LearnWithUs";
 import { Layout } from "@/components/Layout";
+import { urlFor } from "@/lib/sanity";
 import { getClient } from "@/lib/sanity.server";
 import groq from "groq";
+import Link from "next/link";
 
 const Courses = ({ courses, benefits }) => {
   return (
@@ -29,8 +31,7 @@ export async function getStaticProps() {
       price,
     "commissions": commissions[]->{_id,commissionName,duration,dates, modality},
       body,
-      slug,
-      inscriptionLink
+      slug
   }`);
 
   const benefits = await getClient().fetch(

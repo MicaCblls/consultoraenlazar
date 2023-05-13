@@ -40,15 +40,8 @@ export const LearnWithUs = ({ courses, benefits }) => {
 
       <div className="bg-white w-full h-auto lg:min-h-screen flex flex-col justify-center items-center text-dark">
         <div className="flex justify-center items-center w-full h-auto pb-6 bg-grey">
-          <h2
-            className="pt-16 px-4 md:px-8 font-bold text-center text-ellipsis "
-            style={{
-              fontSize: "clamp(1.2rem, 1.0264rem + 0.9256vw, 1.9rem)",
-              width: "clamp(28.125rem, 24.251rem + 20.6612vw, 43.75rem)",
-            }}
-          >
-            Te contamos más sobre toda nuestra propuesta formativa en Recursos
-            Humanos.
+          <h2 className="pt-16 px-4 md:px-8 text-2xl md:text-3xl font-bold text-center text-ellipsis ">
+            Todo lo que vas a encontrar:
           </h2>
         </div>
         <section className="flex flex-col flex-wrap justify-center items-center h-auto gap-6 px-6 py-8 w-full lg:relative lg:flex-row lg:justify-center lg:items-center lg:px-4 lg:py-10 bg-grey">
@@ -68,12 +61,7 @@ export const LearnWithUs = ({ courses, benefits }) => {
           </div>
         </section>
         <section className="flex flex-col justify-center items-center p-6 md:p-12 flex-wrap">
-          <h2
-            className=" p-10 font-bold text-2xl text-center text-ellipsis md:text-3xl md:pb-12 border-t-2"
-            style={{
-              fontSize: "clamp(1.2rem, 1.0264rem + 0.9256vw, 1.9rem)",
-            }}
-          >
+          <h2 className=" p-10 font-bold text-2xl text-center text-ellipsis md:text-3xl md:pb-12 border-t-2">
             ¡Este será tu certificado!
           </h2>
           <Image
@@ -89,12 +77,7 @@ export const LearnWithUs = ({ courses, benefits }) => {
           />
         </section>
         <section className="w-full h-auto bg-grey">
-          <h2
-            className="p-12 font-bold text-center text-ellipsis md:pb-10 border-t-2"
-            style={{
-              fontSize: "clamp(1.2rem, 1.0264rem + 0.9256vw, 1.9rem)",
-            }}
-          >
+          <h2 className="p-12 font-bold text-2xl text-center text-ellipsis md:text-3xl md:pb-10 border-t-2">
             Disfrutá de nuestros beneficios:
           </h2>
           <div className="flex flex-col p-5 md:flex-row flex-wrap justify-evenly items-center m-4">

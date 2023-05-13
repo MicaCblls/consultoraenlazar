@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import BackgroundImg from '@/public/images/letra-e-completa.png';
+import BackgrorundImg from '@/public/images/letra-e-completa.png';
 
 const BePartOf = () => {
 	return (
 		<div className='flex justify-center items-center h-[34rem]'>
 			<div className='absolute items-center'>
 				<Image
-					src={BackgroundImg}
+					src={BackgrorundImg}
 					width={600}
 					height={600}
 					alt='Background Img'

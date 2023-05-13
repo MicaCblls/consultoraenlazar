@@ -26,7 +26,6 @@ module.exports = {
       colors: {
         darkBlue: "#043959",
         blue: "#34668b",
-        lightBlue: "#bac9ce",
         grey: "#bbcacf",
         yellow: "#ecbf48",
         darkYellow: "#8b7f53",
@@ -39,5 +38,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins:
+   [ ],
 };

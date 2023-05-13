@@ -43,8 +43,6 @@ const ServicesCard = ({
                   <button
                     className="rounded-full bg-yellow p-1 px-6 font-semibold text-base md:text-lg"
                     onClick={handleOpenForm}
-                    title={service.title}
-                    value="Servicios"
                   >
                     QUIERO CONTRATAR
                   </button>
@@ -53,10 +51,7 @@ const ServicesCard = ({
             </div>
           ))}
       </div>
-      <h2
-        className="pt-32 pb-14 px-10 font-semibold md:text-xl text-ellipsis "
-        id="organization"
-      >
+      <h2 className="pt-32 pb-14 px-10 font-semibold md:text-xl text-ellipsis " id="organization">
         Para organizaciones:
       </h2>
       <div className={styles.containerTotal}>
@@ -84,8 +79,6 @@ const ServicesCard = ({
                   <button
                     className="rounded-full  bg-yellow p-1 px-6 font-semibold"
                     onClick={handleOpenForm}
-                    title={service.title}
-                    value="Servicios"
                   >
                     QUIERO CONTRATAR
                   </button>

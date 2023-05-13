@@ -11,12 +11,10 @@ import Image from "next/image";
 import logo from "public/images/isotipo-enlazar-blanco.png";
 import { useState } from "react";
 import PrivacyPolicy from "../privacyPolitics/PrivacyPolicy";
-import { useAuth } from "@/lib/AuthContext";
 
 export const Footer = () => {
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState("paper");
-  const { setCurrentPath } = useAuth();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -39,6 +37,9 @@ export const Footer = () => {
     transition: "ease-in-out 0.2s",
   };
 
+  const clampedPadding = {
+    paddingLeft: "clamp(0.5rem, -8.7857rem + 11.4286vw, 2rem)",
+  };
   return (
     <>
       {open ? (
@@ -52,7 +53,7 @@ export const Footer = () => {
           <div className="flex flex-row xsm:max-xl:flex-col justify-center items-center xsm:max-sm:w-full">
             <div className="flex flex-row justify-center items-center ">
               <div className="pt-3 px-0 pb-4 xsm:max-md:hidden ">
-                <Link href="/#top" onClick={() => setCurrentPath("/")}>
+                <Link href="#">
                   <Image
                     className="min-w-[60px]"
                     width={60}
@@ -64,57 +65,37 @@ export const Footer = () => {
               </div>
               <div className="flex flex-row justify-center items-center m-0 list-none w-full md:max-sm:pt-12 xsm:max-xl:flex-col">
                 <ul className="flex flex-row border-r-0 justify-center items-center self-center no-underline text-white list-none xsm:max-md:flex-col py-2 px-2 xsm:max-md:p-0 ">
+                  {/* xl:border-r-[1px] xl:border-solid xl:border-r-yellow  */}
                   <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
-                    <Link
-                      href="/team#top"
-                      onClick={() => setCurrentPath("/team")}
-                      className="hover:font-bold"
-                    >
+                    <Link href="/team" className="hover:font-bold">
                       Equipo
                     </Link>
                   </li>
                   <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
-                    <Link
-                      href="/services#top"
-                      onClick={() => setCurrentPath("/services")}
-                      className="hover:font-bold"
-                    >
+                    <Link href="/services" className="hover:font-bold">
                       Servicios
                     </Link>
                   </li>
                   <li className="md:border-r md:border-solid md:border-r-white pl-2 pr-2 xsm:max-md:pb-3">
                     <Link
-                      href="/courses#top"
-                      onClick={() => setCurrentPath("/courses")}
+                      href="/courses"
                       className="hover:font-bold whitespace-nowrap"
                     >
                       Cursos & Capacitaciones
                     </Link>
                   </li>
                   <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
-                    <Link
-                      href="/community#top"
-                      onClick={() => setCurrentPath("/community")}
-                      className="hover:font-bold"
-                    >
+                    <Link href="/community" className="hover:font-bold">
                       Comunidad
                     </Link>
                   </li>
                   <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
-                    <Link
-                      href="/blog#top"
-                      onClick={() => setCurrentPath("/blog")}
-                      className="hover:font-bold"
-                    >
+                    <Link href="/blog" className="hover:font-bold">
                       Blog
                     </Link>
                   </li>
                   <li className="md:border-r md:border-solid md:border-r-white px-2 xsm:max-md:pb-3">
-                    <Link
-                      href="/#contact"
-                      onClick={() => setCurrentPath("/#contact")}
-                      className="hover:font-bold"
-                    >
+                    <Link href="/contact" className="hover:font-bold">
                       Contacto
                     </Link>
                   </li>
@@ -133,6 +114,9 @@ export const Footer = () => {
           <div className="flex flex-row justify-center items-center m-0 xsm:max-sm:w-full">
             <div className="flex flex-row justify-center items-center list-none text-white mb-0 ">
               <ul className="flex flex-row justify-center items-center no-underline text-white py-2 pr-0 xsm:max-sm:py-2 xsm:max-sm:px-0 ">
+                {/* <li className="  xsm:max-sm:hidden" style={clampedPadding}>
+                  Descubrí nuestra comunidad
+                </li> */}
                 <li className="hover:scale-y-105 hover:scale-x-105 py-0 px-[0.6rem]">
                   <Link
                     href="https://www.instagram.com/enlazar.ok/"
@@ -182,10 +166,10 @@ export const Footer = () => {
             </div>
           </div>
           <div className="pt-3 px-0 pb-4 hidden xsm:max-md:block xsm:max-md:pt-4 ">
-            <Link href="/#top" onClick={() => setCurrentPath("/")}>
+            <Link href="#">
               <Image
                 width={60}
-                height={"auto"}
+                height={60}
                 src={logo}
                 alt="Logo Consultora Enlazar"
               />
