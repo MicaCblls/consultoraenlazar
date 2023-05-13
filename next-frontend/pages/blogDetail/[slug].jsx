@@ -5,6 +5,7 @@ import { Layout } from "@/components/Layout";
 import Image from "next/image";
 import { BsArrowBarLeft } from "react-icons/bs";
 import Link from "next/link";
+import { urlFor } from "@/lib/sanity";
 
 const DetailsComponents = {
   block: {
@@ -56,10 +57,26 @@ const DetailsComponents = {
 };
 
 const BlogDetail = ({ blogDetail }) => {
-  const { title, body, titleSEO, SEOdescription } = blogDetail;
+  const { title, body, titleSEO, SEOdescription, mainImage } = blogDetail;
 
   return (
     <Layout title={titleSEO} content={SEOdescription}>
+      <div className="w-full max-h-[500px] flex justify-center items-center">
+        <div
+          className="absolute w-full h-full max-h-[500px]"
+          style={{
+            background: "linear-gradient(0deg, white, transparent)",
+          }}
+        ></div>
+        <Image
+          src={urlFor(mainImage).url()}
+          quality={100}
+          width={500}
+          height={500}
+          alt={title}
+          className="w-full max-h-[500px] object-cover aspect-video "
+        />
+      </div>
       <Link
         href="/blog#top"
         className="flex self-start items-center font-medium md:text-lg text-blue pt-4 w-full px-4 md:px-8"
@@ -97,7 +114,8 @@ const query = groq`*[_type == "blog" && slug.current == $slug][0]{
     titleSEO,
       SEOdescription,
     title, 
-    body, 
+    body,
+    mainImage 
 }`;
 
 export async function getStaticPaths() {

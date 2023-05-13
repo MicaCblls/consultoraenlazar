@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./Blog.module.css";
 import Link from "next/link";
+import { urlFor } from "@/lib/sanity";
 
 export const Blogs = ({ blogs }) => {
   return (
@@ -26,16 +26,17 @@ export const Blogs = ({ blogs }) => {
                 width: "clamp(15.625rem, 7.1023rem + 45.4545vw, 50rem)",
               }}
             >
-              <div className="bg-blue flex justify-center items-center w-full rounded-t-xl md:w-2/5 md:rounded-l-xl p-4 outline-offset-8 h-full max-h-[150px] md:max-h-full md:rounded-tr-none">
+              <div className="bg-grey flex justify-center items-center w-full rounded-t-xl md:w-2/5 md:rounded-l-xl py-4 outline-offset-8 h-full max-h-[150px] md:max-h-full md:rounded-tr-none">
                 <Image
-                  src="/images/trabaja-con-nosotros.webp"
+                  src={urlFor(blog.mainImage).url()}
+                  quality={100}
                   width={200}
                   height={200}
-                  alt="payhous"
-                  className="w-36 h-36 md:h-auto md:w-auto"
+                  alt={blog.title}
+                  className="w-full h-full max-h-[150px] md:max-h-full rounded-t-xl object-contain aspect-auto"
                 />
               </div>
-              <hr />
+
               <div className="flex flex-col xl:flex-wrap justify-center items-center w-full h-full">
                 <h2
                   className="pt-4 pb-2 px-2 text-center"
@@ -49,10 +50,7 @@ export const Blogs = ({ blogs }) => {
                   {blog.description}
                 </p>
                 <Link href={"/blogDetail/" + blog.slug.current + "#top"}>
-                  <button
-                    className="text-dark bg-yellow inline-block align-middle text-center select-none whitespace-no-wrap rounded-full mb-4 py-1 px-6 sm:px-10 leading-normal no-underline font-bold ease-in-out duration-200 hover:scale-105 uppercase"
-                    /* onClick={handleClickOpen} */
-                  >
+                  <button className="text-dark bg-yellow inline-block align-middle text-center select-none whitespace-no-wrap rounded-full mb-4 py-1 px-6 sm:px-10 leading-normal no-underline font-bold ease-in-out duration-200 hover:scale-105 uppercase">
                     Ver detalles
                   </button>
                 </Link>
