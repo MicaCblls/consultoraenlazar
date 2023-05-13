@@ -52,7 +52,7 @@ export const Footer = () => {
           <div className="flex flex-row xsm:max-xl:flex-col justify-center items-center xsm:max-sm:w-full">
             <div className="flex flex-row justify-center items-center ">
               <div className="pt-3 px-0 pb-4 xsm:max-md:hidden ">
-                <Link href="/" onClick={() => setCurrentPath("/")}>
+                <Link href="/#top" onClick={() => setCurrentPath("/")}>
                   <Image
                     className="min-w-[60px]"
                     width={60}
@@ -64,60 +64,60 @@ export const Footer = () => {
               </div>
               <div className="flex flex-row justify-center items-center m-0 list-none w-full md:max-sm:pt-12 xsm:max-xl:flex-col">
                 <ul className="flex flex-row border-r-0 justify-center items-center self-center no-underline text-white list-none xsm:max-md:flex-col py-2 px-2 xsm:max-md:p-0 ">
-                  <Link
-                    href="/team"
-                    onClick={() => setCurrentPath("/team")}
-                    className="hover:font-bold"
-                  >
-                    <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                    <Link
+                      href="/team#top"
+                      onClick={() => setCurrentPath("/team")}
+                      className="hover:font-bold"
+                    >
                       Equipo
-                    </li>
-                  </Link>
-                  <Link
-                    href="/services"
-                    onClick={() => setCurrentPath("/services")}
-                    className="hover:font-bold"
-                  >
-                    <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                    </Link>
+                  </li>
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                    <Link
+                      href="/services#top"
+                      onClick={() => setCurrentPath("/services")}
+                      className="hover:font-bold"
+                    >
                       Servicios
-                    </li>
-                  </Link>
-                  <Link
-                    href="/courses"
-                    onClick={() => setCurrentPath("/courses")}
-                    className="hover:font-bold whitespace-nowrap"
-                  >
-                    <li className="md:border-r md:border-solid md:border-r-white pl-2 pr-2 xsm:max-md:pb-3">
+                    </Link>
+                  </li>
+                  <li className="md:border-r md:border-solid md:border-r-white pl-2 pr-2 xsm:max-md:pb-3">
+                    <Link
+                      href="/courses#top"
+                      onClick={() => setCurrentPath("/courses")}
+                      className="hover:font-bold whitespace-nowrap"
+                    >
                       Cursos & Capacitaciones
-                    </li>
-                  </Link>
-                  <Link
-                    href="/community"
-                    onClick={() => setCurrentPath("/community")}
-                    className="hover:font-bold"
-                  >
-                    <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                    </Link>
+                  </li>
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                    <Link
+                      href="/community#top"
+                      onClick={() => setCurrentPath("/community")}
+                      className="hover:font-bold"
+                    >
                       Comunidad
-                    </li>
-                  </Link>
-                  <Link
-                    href="/blog#top"
-                    onClick={() => setCurrentPath("/blog")}
-                    className="hover:font-bold"
-                  >
-                    <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                    </Link>
+                  </li>
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 py-0 xsm:max-md:pb-3">
+                    <Link
+                      href="/blog#top"
+                      onClick={() => setCurrentPath("/blog")}
+                      className="hover:font-bold"
+                    >
                       Blog
-                    </li>
-                  </Link>
-                  <Link
-                    href="/#contact"
-                    onClick={() => setCurrentPath("/#contact")}
-                    className="hover:font-bold"
-                  >
-                    <li className="md:border-r md:border-solid md:border-r-white px-2 xsm:max-md:pb-3">
+                    </Link>
+                  </li>
+                  <li className="md:border-r md:border-solid md:border-r-white px-2 xsm:max-md:pb-3">
+                    <Link
+                      href="/#contact"
+                      onClick={() => setCurrentPath("/#contact")}
+                      className="hover:font-bold"
+                    >
                       Contacto
-                    </li>
-                  </Link>
+                    </Link>
+                  </li>
                   <li className=" px-2 py-0 xsm:max-md:pb-3">
                     <button
                       onClick={handleClickOpen}

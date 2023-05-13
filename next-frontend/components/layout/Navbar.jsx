@@ -204,60 +204,60 @@ export const Navbar = () => {
           }`}
         >
           <ul className="flex flex-col justify-center items-center p-2 w-full h-3/4 space-y-4 opacity-95 xl:flex-row xl:h-full xl:w-auto xl:space-x-6 xl:space-y-0 xl:p-0 xl:pt-2 xl:opacity-100 bg-white">
-            <Link
-              className="flex flex-1 w-full justify-center self-center"
-              href="/team"
-              onClick={() => setCurrentPath("/team")}
-            >
-              <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+              <Link
+                className="flex flex-1 w-full justify-center self-center"
+                href="/team#top"
+                onClick={() => setCurrentPath("/team")}
+              >
                 Equipo
-              </li>
-            </Link>
-            <Link
-              className="flex flex-1 w-full justify-center self-center"
-              href="/services"
-              onClick={() => setCurrentPath("/services")}
-            >
-              <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+              </Link>
+            </li>
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+              <Link
+                className="flex flex-1 w-full justify-center self-center"
+                href="/services#top"
+                onClick={() => setCurrentPath("/services")}
+              >
                 Servicios
-              </li>
-            </Link>
-            <Link
-              className="flex flex-1 w-full justify-center self-center"
-              href="/courses"
-              onClick={() => setCurrentPath("/courses")}
-            >
-              <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base whitespace-nowrap">
+              </Link>
+            </li>
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base whitespace-nowrap">
+              <Link
+                className="flex flex-1 w-full justify-center self-center"
+                href="/courses#top"
+                onClick={() => setCurrentPath("/courses")}
+              >
                 Cursos & Capacitaciones
-              </li>
-            </Link>
-            <Link
-              className="flex flex-1 w-full justify-center self-center"
-              href="/community"
-              onClick={() => setCurrentPath("/community")}
-            >
-              <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+              </Link>
+            </li>
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+              <Link
+                className="flex flex-1 w-full justify-center self-center"
+                href="/community#top"
+                onClick={() => setCurrentPath("/community")}
+              >
                 Comunidad
-              </li>
-            </Link>
-            <Link
-              className="flex flex-1 w-full justify-center self-center"
-              href="/blog"
-            >
-              <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+              </Link>
+            </li>
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+              <Link
+                className="flex flex-1 w-full justify-center self-center"
+                href="/blog#top"
+              >
                 Blog
-              </li>
-            </Link>
-            <Link
-              className="flex flex-1 w-full justify-center self-center"
-              href="/#contact"
-              onClick={() => setCurrentPath("/#contact")}
-              scroll={false}
-            >
-              <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+              </Link>
+            </li>
+            <li className="flex xl:w-full text-dark hover:text-darkBlue font-bold xl:font-medium text-base">
+              <Link
+                className="flex flex-1 w-full justify-center self-center"
+                href="/#contact"
+                onClick={() => setCurrentPath("/#contact")}
+                scroll={false}
+              >
                 Contacto
-              </li>
-            </Link>
+              </Link>
+            </li>
             {!session ? (
               <div className="flex flex-row xl:hidden">
                 <Link
